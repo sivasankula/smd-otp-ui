@@ -16,6 +16,12 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "smd-otp-ui": [
+        "dist/smd-otp-ui/smd-otp-ui",
+        "dist/smd-otp-ui"
+      ]
+    },
     "target": "es2017",
     "module": "es2020",
     "lib": [
