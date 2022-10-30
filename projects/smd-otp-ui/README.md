@@ -14,23 +14,17 @@ npm install smd-otp-ui
 
 import the otp-ui module in the module file of the your component as below
 ```
-import { NgModule } from '@angular/core';
+  import { SmdOtpUiModule } from 'smd-otp-ui';
 
-import { NgOtpUIModule } from 'projects/ng-otp-ui/src/public-api';
-
-import { AppComponent } from './app.component';
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    NgOtpUIModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
+    @NgModule({
+    declarations: [],
+    imports: [
+        NgOtpUIModule,
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
+    })
+    export class AppModule { }
 ```
 
 ### Usage
