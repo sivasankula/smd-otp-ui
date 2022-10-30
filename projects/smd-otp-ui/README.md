@@ -32,7 +32,7 @@ import the otp-ui module in the module file of the your component as below
 use the selector `smd-otp-ui`
 
 #### Input
-use the lenght property `length="n"` to define the lenght of the otp number
+use the length property `length="n"` to define the length of the otp number
 <br> here `n` is the natural number which accepts number greater than or eqauls to 4
 ***
 #### Otput
@@ -93,23 +93,17 @@ use the output property to access the form control values of the opt as `onInput
 		<smd-otp-ui length="6" (onInputChange) = 'onRecievedOtp($event)'></smd-otp-ui>
 ```
 
-Its accept the input property of lenght and output property of onInputChange method 
+It accept the input property of length and output property of onInputChange method.
 <br>
-Generally if you not provide the length it takes the default length as `4`
+Generally if you not provide the length it takes the default length as `4`.
 <br>
-Use the `$event` for receiving the output which is entered to the otp input elements
+Use the `$event` for receiving the output which is entered to the otp input elements.
 <br>
-`onInputChange` function takes the param $event and gives the output as array
+`onInputChange` function takes the param $event and gives the output as array.
 <br>
-Example
+###### Example
 <br>
-entered otp inputs to otp elemsts as 190684 its gives output as `[1, 9, 0, 6, 8, 4]`
+entered otp inputs to otp elemsts as 190684 its gives output as `[1, 9, 0, 6, 8, 4]`.
 <br>
-its only emits the output when the total number of inputs are entered
+it only emits the output when the total number of inputs are entered.
 
-#### Key words
-
-
-  **keywords**: ["smd-otp-ui", angular-otp", "otp-ui-verify", "otp-check", "verify otp", "ng-otp form", "ng-otp-UI", "angular otp form", "angular otp validate", "validate otp"
-  ]
-}
