@@ -1,0 +1,9 @@
+<div class="otpItems">
+    <form [formGroup]="otpForm">
+        <div>
+          <ng-container *ngFor="let item of arr;">
+            <input class="inputClass" maxlength="1" autofocus [formControlName]=item ssNextFocus ssNumbersOnly (keyup)="otpEnteredKey($event)">
+          </ng-container>
+        </div>
+      </form>
+</div>

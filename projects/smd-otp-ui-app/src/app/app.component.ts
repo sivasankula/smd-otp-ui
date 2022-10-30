@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'smd-otp-ui-app';
+  otp:any = ''
+  recievedOTP(eve:any){
+    console.log("app",eve)
+    this.otp = eve
+  }
 }
