@@ -1,27 +1,120 @@
-# SmdOtpUi
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.3.
+# Angular Otp UI template
 
-## Development server
+![alt text](https://raw.githubusercontent.com/sivasankula19/smd-otp-ui/siva_dev/projects/smd-otp-ui/otp_animated_s.gif)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+[![Npm Version](https://img.shields.io/badge/npm-v1.0.0-red.svg)(https://www.npmjs.com/package/smd-otp-ui)]
 
-## Code scaffolding
+## Installation
+```
+npm install smd-otp-ui
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### How to use
 
-## Build
+import the otp-ui module in the module file of the your component as below
+```
+import { NgModule } from '@angular/core';
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+import { NgOtpUIModule } from 'projects/ng-otp-ui/src/public-api';
 
-## Running unit tests
+import { AppComponent } from './app.component';
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    NgOtpUIModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+```
 
-## Running end-to-end tests
+### Usage
+use the selector `smd-otp-ui`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+#### Input
+use the lenght property `length="n"` to define the lenght of the otp number
+<br> here `n` is the natural number which accepts number greater than or eqauls to 4
+***
+#### Otput
+***
+use the output property to access the form control values of the opt as `onInputChange` function
+****
+#### properties
+****
 
-## Further help
+*****
+| Input decorator | Otput decorator                    |
+| ------------- | ------------------------------ |
+|   `length`    |    `onInputChange`  |
+****
+#### Example
+*****
+| Input | Otput                    |
+| ------------- | ------------------------------ |
+|   length= "4"    |    (onInputChange)= "recievedOTP($event)"   |
+****
+#### app.component.html
+****
+```
+<div>
+		<smd-otp-ui length="4" (onInputChange) = 'onRecievedOtp($event)'></smd-otp-ui>
+</div>
+```
+****
+#### app.component.ts
+****
+```javascript
+	import { Component } from '@angular/core';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+	@Component({
+  		selector: 'app-root',
+  		templateUrl: './app.component.html',
+  		styleUrls: ['./app.component.scss']
+	})
+	export class AppComponent {
+  		title = 'smd-otp-ui-app';
+  		otp:any = ''
+  		onRecievedOtp(eve:any){
+    		console.log("app",eve)
+    		this.otp = eve
+  		}
+	}
+
+```
+
+
+
+
+****
+#### Description
+****
+
+```
+		<smd-otp-ui length="6" (onInputChange) = 'onRecievedOtp($event)'></smd-otp-ui>
+```
+
+Its accept the input property of lenght and output property of onInputChange method 
+<br>
+Generally if you not provide the length it takes the default length as `4`
+<br>
+Use the `$event` for receiving the output which is entered to the otp input elements
+<br>
+`onInputChange` function takes the param $event and gives the output as array
+<br>
+Example
+<br>
+entered otp inputs to otp elemsts as 190684 its gives output as `[1, 9, 0, 6, 8, 4]`
+<br>
+its only emits the output when the total number of inputs are entered
+
+#### Key words
+
+
+  **keywords**: ["smd-otp-ui", angular-otp", "otp-ui-verify", "otp-check", "verify otp", "ng-otp form", "ng-otp-UI", "angular otp form", "angular otp validate", "validate otp"
+  ]
+}
