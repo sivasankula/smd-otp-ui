@@ -1,7 +1,145 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "329b5ce2-bfa4-4564-9869-9c54e3e8fb55"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "smd-otp-ui": {
+      "projectType": "library",
+      "root": "projects/smd-otp-ui",
+      "sourceRoot": "projects/smd-otp-ui/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/smd-otp-ui/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/smd-otp-ui/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/smd-otp-ui/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/smd-otp-ui/src/test.ts",
+            "tsConfig": "projects/smd-otp-ui/tsconfig.spec.json",
+            "karmaConfig": "projects/smd-otp-ui/karma.conf.js"
+          }
+        }
+      }
+    },
+    "smd-otp-ui-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
+      "root": "projects/smd-otp-ui-app",
+      "sourceRoot": "projects/smd-otp-ui-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/smd-otp-ui-app",
+            "index": "projects/smd-otp-ui-app/src/index.html",
+            "main": "projects/smd-otp-ui-app/src/main.ts",
+            "polyfills": "projects/smd-otp-ui-app/src/polyfills.ts",
+            "tsConfig": "projects/smd-otp-ui-app/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/smd-otp-ui-app/src/favicon.ico",
+              "projects/smd-otp-ui-app/src/assets"
+            ],
+            "styles": [
+              "projects/smd-otp-ui-app/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "projects/smd-otp-ui-app/src/environments/environment.ts",
+                  "with": "projects/smd-otp-ui-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "smd-otp-ui-app:build:production"
+            },
+            "development": {
+              "browserTarget": "smd-otp-ui-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "smd-otp-ui-app:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/smd-otp-ui-app/src/test.ts",
+            "polyfills": "projects/smd-otp-ui-app/src/polyfills.ts",
+            "tsConfig": "projects/smd-otp-ui-app/tsconfig.spec.json",
+            "karmaConfig": "projects/smd-otp-ui-app/karma.conf.js",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "projects/smd-otp-ui-app/src/favicon.ico",
+              "projects/smd-otp-ui-app/src/assets"
+            ],
+            "styles": [
+              "projects/smd-otp-ui-app/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "smd-otp-ui"
 }

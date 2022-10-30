@@ -1,0 +1,34 @@
+{
+  "name": "smd-otp-ui",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^13.1.0",
+    "@angular/core": "^13.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "author": {
+    "email": "sankulashiva09@gmail.com",
+    "name": "Sivaiah Sankula",
+    "url": "https://github.com/sivasankula19/smd-otp-ui"
+  },
+  "contributors": [
+    {
+      "email": "sankulashiva09@gmail.com",
+      "url": "https://github.com/sivasankula19/smd-otp-ui",
+      "name": "Sivaiah Sankula"
+    }
+  ],
+  "keywords": [
+    "ng-otp",
+    "otp-ui-verify",
+    "otp-check",
+    "verify otp",
+    "ng-otp form",
+    "ng-otp-UI",
+    "angular otp form",
+    "angular otp validate",
+    "vslidate otp"
+  ]
+}
