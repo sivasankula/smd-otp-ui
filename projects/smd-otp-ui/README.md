@@ -1,6 +1,6 @@
 
-# Angular Otp UI template
-
+# SmdOtpUi
+## Angular Otp UI template
 ![alt text](https://raw.githubusercontent.com/sivasankula19/smd-otp-ui/siva_dev/projects/smd-otp-ui/otp_animated_s.gif)
 
 [![Npm Version](https://img.shields.io/badge/npm-v1.0.0-red.svg)(https://www.npmjs.com/package/smd-otp-ui)]
