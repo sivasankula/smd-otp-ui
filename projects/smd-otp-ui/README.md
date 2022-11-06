@@ -20,7 +20,7 @@ import the otp-ui module in the module file of the your component as below
     @NgModule({
     declarations: [],
     imports: [
-        NgOtpUIModule,
+        SmdOtpUiModule,
     ],
     providers: [],
     bootstrap: [AppComponent]
